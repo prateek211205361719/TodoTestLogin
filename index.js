@@ -115,7 +115,7 @@ app.patch('/todos/:id', isValidUser, async (req, res) => {
         res.status(400).send();
     }
     var body = _.pick(req.body,['text','comleted']);
-    if(_.isBoolean(body.completed)  && body.comleted){
+    if(_.isBoolean(body.comleted)  && body.comleted){
         body.completedAt = new Date().getTime().toString();
     }else{
         body.comleted = false;
